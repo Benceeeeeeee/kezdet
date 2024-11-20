@@ -1,12 +1,12 @@
 const API_URL = "https://retoolapi.dev/CvTAYs/data";
-// Termékek betöltése
+
 async function loadProducts() {
  try {
    const response = await fetch(API_URL);
    const products = await response.json();
    const list = document.getElementById("product-list");
-   list.innerHTML = ""; // Korábbi tartalom törlése
-   const availableProducts = products.filter(product => product.stock > 0); // Csak készleten lévő termékek
+   list.innerHTML = "";
+   const availableProducts = products.filter(product => product.stock > 0);
    if (availableProducts.length === 0) {
      list.innerHTML = "<p>Nincs elérhető termék a raktárban!</p>";
      return;
@@ -25,7 +25,7 @@ async function loadProducts() {
    alert("Nem sikerült betölteni a termékeket!");
  }
 }
-// Termék törlése
+
 async function deleteProduct(id) {
  try {
    const response = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
@@ -39,7 +39,7 @@ async function deleteProduct(id) {
    alert("Nem sikerült törölni a terméket!");
  }
 }
-// Új termék hozzáadása
+
 document.getElementById("add-product-form").addEventListener("submit", async (e) => {
  e.preventDefault();
  const name = document.getElementById("name").value;
@@ -72,5 +72,5 @@ document.getElementById("add-product-form").addEventListener("submit", async (e)
    alert("Hiba történt a termék hozzáadása során!");
  }
 });
-// Termékek betöltése a kezdéskor
+
 loadProducts();
