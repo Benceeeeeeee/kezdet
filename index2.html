@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raktár</title>
+    <link rel="stylesheet" href="raktar.css">
+</head>
+
+<body>
+    <h1>Raktár</h1>
+    <hr>
+    <div id="product-list"></div>
+    <h2>Új termék hozzáadása</h2>
+    <form id="add-product-form">
+        <label>Név: <input type="text" id="name" required></label><br>
+        <label>Kategória: <input type="text" id="category" required></label><br>
+        <label>Ár: <input type="number" id="price" required></label><br>
+        <label>Készlet: <input type="number" id="stock" required></label><br>
+        <button type="submit">Hozzáadás</button>
+    </form>
+    <script src="raktar.js"></script>
+</body>
+
+</html>
